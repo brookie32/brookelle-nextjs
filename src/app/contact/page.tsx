@@ -45,67 +45,76 @@ export default function Contact() {
   };
 
   return (
-    <main>
-      <section className="page-section">
-        <div className="container">
-          <h1 className="page-title">Contact Us</h1>
-          
-          <div className="content-wrapper">
-            <p className="lead-text">
-              Ready to transform your business with elegant automation? Get in touch with our team.
-            </p>
+    <>
+      <main>
+        <section className="page-section">
+          <div className="container">
+            <h1 className="page-title">Contact Us</h1>
             
-            <div className="contact-form-wrapper">
-              {formStatus.submitted && formStatus.success ? (
-                <div className="success-message" style={{ textAlign: 'center', padding: '20px' }}>
-                  <h3 style={{ color: 'var(--gold)', marginBottom: '16px' }}>Message Sent</h3>
-                  <p>{formStatus.message}</p>
-                </div>
-              ) : (
-                <form className="contact-form" onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      name="name" 
-                      value={formData.name}
-                      onChange={handleChange}
-                      required 
-                    />
+            <div className="content-wrapper">
+              <p className="lead-text">
+                Ready to transform your business with elegant automation? Get in touch with our team.
+              </p>
+              
+              <div className="contact-form-wrapper">
+                {formStatus.submitted && formStatus.success ? (
+                  <div className="success-message" style={{ textAlign: 'center', padding: '20px' }}>
+                    <h3 style={{ color: 'var(--gold)', marginBottom: '16px' }}>Message Sent</h3>
+                    <p>{formStatus.message}</p>
                   </div>
-                  
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      name="email" 
-                      value={formData.email}
-                      onChange={handleChange}
-                      required 
-                    />
-                  </div>
-                  
-                  <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea 
-                      id="message" 
-                      name="message" 
-                      rows={5} 
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                    ></textarea>
-                  </div>
-                  
-                  <button type="submit" className="cta-btn">Send Message</button>
-                </form>
-              )}
+                ) : (
+                  <form className="contact-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="name">Name</label>
+                      <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        value={formData.name}
+                        onChange={handleChange}
+                        required 
+                      />
+                    </div>
+                    
+                    <div className="form-group">
+                      <label htmlFor="email">Email</label>
+                      <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        value={formData.email}
+                        onChange={handleChange}
+                        required 
+                      />
+                    </div>
+                    
+                    <div className="form-group">
+                      <label htmlFor="message">Message</label>
+                      <textarea 
+                        id="message" 
+                        name="message" 
+                        rows={5} 
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    <button type="submit" className="cta-btn">Send Message</button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
+        </section>
+      </main>
+      <footer className="site-footer">
+        <div className="container">
+          <p style={{ margin: 0, padding: '24px 0', textAlign: 'center', color: 'var(--grey)' }}>
+            &copy; {new Date().getFullYear()} Brookelle, LTD. | C/O Langtons The Plaza, 100 Old Hall Street, Liverpool, United Kingdom, L3 9QJ | info@brookelle.ai
+          </p>
         </div>
-      </section>
-    </main>
+      </footer>
+    </>
   );
 }
